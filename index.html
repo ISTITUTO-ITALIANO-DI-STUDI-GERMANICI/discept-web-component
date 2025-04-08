@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DiScEPT – Editor di Allineamento TEI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧩 DiScEPT – Editor di Allineamento TEI</h1>
+  </header>
+
+  <section class="import-section">
+    <label for="sourceFile">📂 Testo originale (TEI):</label>
+    <input type="file" id="sourceFile" accept=".xml" />
+    <label for="targetFile">📂 Traduzione (TEI):</label>
+    <input type="file" id="targetFile" accept=".xml" />
+  </section>
+
+  <div class="container">
+    <main class="main-viewer">
+      <section class="panel">
+        <h2>Originale</h2>
+        <div id="sourceText" class="text-box" contenteditable="true"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Traduzione</h2>
+        <div id="targetText" class="text-box" contenteditable="true"></div>
+      </section>
+
+      <aside class="sidebar">
+        <h3>🎛 Strumenti</h3>
+        <button id="tokenizeBtn">✂️ Tokenizza</button>
+        <button id="autoAlignBtn">🤖 Allineamento automatico</button>
+        <button id="createLinkBtn">🔗 Crea collegamento</button>
+
+        <label for="categorySelect">Categoria:</label>
+        <select id="categorySelect">
+          <option value="literal">Traduzione letterale</option>
+          <option value="paraphrase">Parafrasi</option>
+          <option value="summary">Sintesi</option>
+          <option value="comment">Commento</option>
+        </select>
+
+        <button id="exportBtn">📤 Esporta allineamenti</button>
+        <button id="downloadBtn">💾 Scarica TEI</button>
+      </aside>
+    </main>
+  </div>
+
+  <section class="output-section">
+    <h3>🧾 Codice TEI generato</h3>
+    <pre id="output"></pre>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
